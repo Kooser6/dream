@@ -18,6 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->where(['provider' => 'github|google|twitter'])->name('social.auth');
-Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->where(['provider' => 'github|google|twitter']);
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->where(['provider' => 'github|google|twitter'])->name('social.auth.callback');
 
 Route::get('/home', 'HomeController@index')->name('home');
